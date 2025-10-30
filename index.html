@@ -3,43 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>طلب منتج GPS Auto</title>
+  <title>اطلب جهاز GPS - تتبع سيارتك</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      background: #f2f3f7;
+      background: #f4f5f8;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      background: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 420px;
-    }
-    h1 {
       text-align: center;
       color: #333;
-      margin-bottom: 20px;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px 10px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    h2 {
+      margin-top: 10px;
+      color: #222;
+    }
+    section {
+      padding: 20px;
+      background: white;
+      margin: 15px auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 450px;
+    }
+    ul {
+      text-align: right;
+      line-height: 1.8;
+    }
+    form {
+      margin-top: 20px;
+      text-align: right;
     }
     label {
       font-weight: bold;
-      color: #444;
+      display: block;
+      margin-bottom: 5px;
     }
-    input, textarea, select {
+    input, textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 15px;
+      font-family: inherit;
     }
     button {
       background: #007bff;
@@ -48,24 +65,47 @@
       width: 100%;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
       font-size: 16px;
+      cursor: pointer;
     }
     button:hover {
       background: #0056b3;
     }
-    .success-message {
-      display: none;
-      text-align: center;
-      color: green;
+    .whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+    }
+    footer {
+      margin-top: 20px;
+      color: #666;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>طلب منتج GPS Auto</h1>
+  <header>
+    <h1>اطلب جهاز GPS - تتبع سيارتك</h1>
+    <p>تتبّع آمن وسهل داخل الجزائر 🚗</p>
+  </header>
+
+  <section>
+    <h2>📦 مواصفات ومزايا</h2>
+    <ul>
+      <li>تتبع لحظي عبر تطبيق أو واجهة ويب</li>
+      <li>تنبيهات عند تحريك السيارة أو دخول/خروج من منطقة محددة</li>
+      <li>سهل التركيب ويدعم جميع السيارات</li>
+      <li>توفير سجل المسارات ووقت التشغيل</li>
+    </ul>
+
+    <p><strong>💰 السعر:</strong> 7,999 دج</p>
+    <p>📍 التوصيل داخل الجزائر فقط</p>
 
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="61d56cf1-1e96-4065-b6f3-31f403b5a9c8">
@@ -73,52 +113,31 @@
       <label>الاسم الكامل:</label>
       <input type="text" name="fullname" required>
 
-      <label>اللقب:</label>
-      <input type="text" name="lastname" required>
-
       <label>رقم الهاتف:</label>
       <input type="tel" name="phone" required>
 
-      <label>الولاية:</label>
+      <label>الولاية / المدينة:</label>
       <input type="text" name="state" required>
 
-      <label>العنوان:</label>
-      <textarea name="address" rows="3" required></textarea>
+      <label>العنوان (اختياري):</label>
+      <textarea name="address" rows="2"></textarea>
 
-      <label>ملاحظات إضافية:</label>
+      <label>ملاحظات (اختياري):</label>
       <textarea name="notes" rows="3"></textarea>
 
-      <button type="submit">إرسال الطلب</button>
+      <button type="submit">📩 أرسل الطلب</button>
     </form>
 
-    <p class="success-message" id="success">✅ تم إرسال طلبك بنجاح، سنتصل بك قريبًا!</p>
-  </div>
+    <a class="whatsapp" href="https://wa.me/213561452047" target="_blank">
+      💬 تواصل عبر واتساب
+    </a>
+
+    <p id="success" style="display:none; color:green; font-weight:bold;">✅ تم إرسال طلبك بنجاح! سنعاود الاتصال بك قريبًا.</p>
+  </section>
+
+  <footer>
+    © حقوق الطبع محفوظة — هذه الصفحة لجمع الطلبات فقط. سيتم الاتصال بك لتأكيد السعر والتركيب.
+  </footer>
 
 </body>
 </html>
-     * تعليمات التهيئة:
-     * - استبدل `WEBHOOK_URL` بعنوان نقطة استقبال (Webhook) الذي تريد إرسال الطلبات إليه.
-     *   أمثلة: Formspree endpoint, Zapier webhook, Google Apps Script URL، أو نقطة خلفية على موقعك.
-     * - إذا أردت استقبال الطلبات عبر تيلغرام أو عبر Google Sheets، يمكنك إعداد Zapier/Make/Google Apps Script
-     *   ثم وضع رابط الـ webhook 
-
-
-تمّ إنشاء الصفحة الجاهزة ✅ — ستجدها في اللوحة إلى جانب المحادثة بعنوان صفحة بيع Gps.
-
-نقاط مهمة سريعة:
-
-الصفحة HTML كاملة (متوافقة مع الهواتف والحواسب)، تحتوي على نموذج يجمع: الاسم الكامل، رقم الهاتف، الولاية، العنوان، وملاحظات.
-
-للتحكم بكيفية استقبال الطلبات عدّل قيمة WEBHOOK_URL في ملف الـ HTML إلى رابط الـ webhook أو endpoint الذي تفضّله (مثلاً: Formspree, Zapier, Make, Google Apps Script، أو نقطة استقبال على موقعك).
-
-إذا تفضّل استقبال الطلبات مباشرة عبر واتساب، ضع رقمك في المتغيّر WHATSAPP_NUMBER داخل الملف — زر "تواصل عبر واتساب" سيفتح نافذة محادثة مع رسالة مُسبقة التعبئة.
-
-أستطيع أيضاً:
-
-ربط النموذج بصفحة Google Sheet (أرشح Google Apps Script أو Zapier) وأعدّ لك سكربت جاهز.
-
-أو أعدّل الصفحة كي ترسل البيانات مباشرة إلى بريدك الإلكتروني (باستخدام خدمة وسيطة مثل Formspree).
-
-
-
-أي تعديل تريده — نص السعر، النصوص بالعربية/الفرنسية، إضافة حقول (مثلاً: نوع التثبيت)، أو ربط بـ Google Sheets — أخبرني وسأعدّها لك فورًا.
