@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طلب منتج GPS Auto</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f2f3f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>طلب منتج GPS Auto</h1>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="61d56cf1-1e96-4065-b6f3-31f403b5a9c8">
+
+      <label>الاسم الكامل:</label>
+      <input type="text" name="fullname" required>
+
+      <label>اللقب:</label>
+      <input type="text" name="lastname" required>
+
+      <label>رقم الهاتف:</label>
+      <input type="tel" name="phone" required>
+
+      <label>الولاية:</label>
+      <input type="text" name="state" required>
+
+      <label>العنوان:</label>
+      <textarea name="address" rows="3" required></textarea>
+
+      <label>ملاحظات إضافية:</label>
+      <textarea name="notes" rows="3"></textarea>
+
+      <button type="submit">إرسال الطلب</button>
+    </form>
+
+    <p class="success-message" id="success">✅ تم إرسال طلبك بنجاح، سنتصل بك قريبًا!</p>
+  </div>
+
+</body>
+</html>
+     * تعليمات التهيئة:
+     * - استبدل `WEBHOOK_URL` بعنوان نقطة استقبال (Webhook) الذي تريد إرسال الطلبات إليه.
+     *   أمثلة: Formspree endpoint, Zapier webhook, Google Apps Script URL، أو نقطة خلفية على موقعك.
+     * - إذا أردت استقبال الطلبات عبر تيلغرام أو عبر Google Sheets، يمكنك إعداد Zapier/Make/Google Apps Script
+     *   ثم وضع رابط الـ webhook 
+
+
+تمّ إنشاء الصفحة الجاهزة ✅ — ستجدها في اللوحة إلى جانب المحادثة بعنوان صفحة بيع Gps.
+
+نقاط مهمة سريعة:
+
+الصفحة HTML كاملة (متوافقة مع الهواتف والحواسب)، تحتوي على نموذج يجمع: الاسم الكامل، رقم الهاتف، الولاية، العنوان، وملاحظات.
+
+للتحكم بكيفية استقبال الطلبات عدّل قيمة WEBHOOK_URL في ملف الـ HTML إلى رابط الـ webhook أو endpoint الذي تفضّله (مثلاً: Formspree, Zapier, Make, Google Apps Script، أو نقطة استقبال على موقعك).
+
+إذا تفضّل استقبال الطلبات مباشرة عبر واتساب، ضع رقمك في المتغيّر WHATSAPP_NUMBER داخل الملف — زر "تواصل عبر واتساب" سيفتح نافذة محادثة مع رسالة مُسبقة التعبئة.
+
+أستطيع أيضاً:
+
+ربط النموذج بصفحة Google Sheet (أرشح Google Apps Script أو Zapier) وأعدّ لك سكربت جاهز.
+
+أو أعدّل الصفحة كي ترسل البيانات مباشرة إلى بريدك الإلكتروني (باستخدام خدمة وسيطة مثل Formspree).
+
+
+
+أي تعديل تريده — نص السعر، النصوص بالعربية/الفرنسية، إضافة حقول (مثلاً: نوع التثبيت)، أو ربط بـ Google Sheets — أخبرني وسأعدّها لك فورًا.
